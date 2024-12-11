@@ -1,0 +1,202 @@
+with open ("Build-a-Large-Language-Model-From-Scratch-MEAP-Sebastian-Raschka-Z-Library.txt" , "r" ,encoding = "utf-8") as file:
+    text = file.read()
+    print ("  tota character :" , len(raw_text))
+    print (raw_text[:100])
+
+with open ("Build-a-Large-Language-Model-From-Scratch-MEAP-Sebastian-Raschka-Z-Library.txt" , "r" ,encoding = "utf-8") as file:
+    raw_text = file.read()
+    print ("  tota character :" , len(raw_text))
+    print (raw_text[:99])
+
+
+why it is showing the 0 character
+
+
+with open ("Build-a-Large-Language-Model-From-Scratch-MEAP-Sebastian-Raschka-Z-Library.txt" , "r" ,encoding = "utf-8") as file:
+    text = file.read()
+    print ("  tota character :" , len(text))  # Use 'text' here
+    print (text[:100])  # Use 'text' here as well
+
+with open("Build-a-Large-Language-Model-From-Scratch-MEAP-Sebastian-Raschka-Z-Library.txt", "r", encoding="utf-8") as file:
+    text = file.read()  # Read the file content into the 'text' variable
+    print("  total character :", (text))  # Use 'text' to get the length
+    print(text)   # Use 'text' to slice the first 100 characters
+
+# Make sure the file 'Build a Large Language Model (From Scratch) (MEAP) (Sebastian Raschka) (Z-Library)' exists in the current directory,
+# or provide the full path to the file.
+# For example, if the file is in the 'data' folder within your current working directory:
+
+with open("./data/Build a Large Language Model (From Scratch) (MEAP) (Sebastian Raschka) (Z-Library)", "r", encoding="utf-8") as file:
+    text = file.read()
+    # The variable was named 'text' in the file.read() line but was used as 'raw_text' later. Changing to 'text'
+    print("  tota character :", len(text))
+    print(text[:100])
+
+import requests
+
+# Replace with the URL of your data text file
+
+
+with open("Build-a-Large-Language-Model-From-Scratch-MEAP-Sebastian-Raschka-Z-Library.txt", 'wb') as file:
+    file.write(response.content)
+
+print('File downloaded successfully!')
+
+# prompt: with open ("Build-a-Large-Language-Model-From-Scratch-MEAP-Sebastian-Raschka-Z-Library.txt" , "r" ,encoding = "utf-8") as file:
+#     raw_text = file.read()
+#     print ("  tota character :" , len(raw_text))
+#     print (raw_text[:99])
+
+with open("/content/Build-a-Large-Language-Model-From-Scratch-MEAP-Sebastian-Raschka-Z-Libraryv (1).txt", "r", encoding="utf-8") as file:
+    raw_text = file.read()
+    print("  total character :", len(raw_text))
+    print(raw_text[:100])
+
+import re
+
+text = "build ,a large language model from scratch"
+result = re.split(r'(\s)' , text)
+print(result)
+
+
+p = re.split(r'(\s)' , raw_text)
+print(p)
+
+print(len(p))
+
+vocab = sorted(set(p))
+print(vocab)
+
+vocab = {token : idx for idx , token in enumerate(vocab)}
+print(vocab)
+
+class simpletokenizer:
+    def __init__(self , vocab):
+        self.vocab = vocab
+        self.str_to_int = vocab
+        self.int_to_str = {idx : token for token , idx in vocab.items()}
+
+
+def encode (self ,text ):
+    p = re.split(r'(\s)' , text)
+    return [self.str_to_int[token] for token in p]
+
+def decode (self , tokens):
+    return ''.join([self.int_to_str[token] for token in tokens])
+
+tokenizer = simpletokenizer(vocab)
+
+text = "build ,a large language model from scratch"
+tokens = tokenizer.encode(text)
+print(tokens)
+
+import re
+
+class simpletokenizer:
+    def __init__(self, vocab):
+        self.vocab = vocab
+        self.str_to_int = vocab
+        self.int_to_str = {idx: token for token, idx in vocab.items()}
+
+    def encode(self, text):  # Define encode inside the class
+        p = re.split(r'(\s)', text)
+        return [self.str_to_int[token] for token in p]
+
+    def decode(self, tokens):  # Define decode inside the class
+        return ''.join([self.int_to_str[token] for token in tokens])
+
+# Assuming 'vocab' is already defined
+tokenizer = simpletokenizer(vocab)
+
+text = "build a large language model from scratch"
+tokens = tokenizer.encode(text)
+print(tokens)
+
+tokenizer = simpletokenizerV2
+
+
+def encode (self ,text ):
+    p = re.split(r'(\s)' , text)
+    return [self.str_to_int[token] for token in p]
+    item if item in self.str_to_int else self.str_to_int['<unk>']
+    for item in p :
+        if item in self.str_to_int:
+            tokens.append(self.str_to_int[item])
+        else:
+            tokens.append(self.str_to_int['<unk>'])
+    return tokens
+
+def decode (self , tokens):
+    return ''.join([self.int_to_str[token] for token in tokens])
+
+
+tokenizer = SimpleTokrnizerV2(vocab)
+
+text1 = "build ,a large language model from scratch"
+text2 = "i love you"
+text ="<|endoftext|>".join((text1,text2))
+print(text)
+
+# Instead of:
+# tokenizer = SimpleTokrnizerV2(vocab)
+
+# Use:
+tokenizer = simpletokenizer(vocab)  # Use the correct class name 'simpletokenizer'
+
+text1 = "build a large language model from scratch"
+text2 = "i love you"
+text = "<|endoftext|>".join((text1, text2))
+print(text)
+
+
+
+tokens = tokenizer.encode(text)
+print(tokens)
+
+import re
+
+class simpletokenizer:
+    def __init__(self, vocab):
+        self.vocab = vocab
+        self.str_to_int = vocab
+        self.int_to_str = {idx: token for token, idx in vocab.items()}
+        # Add <unk> token to vocabulary if not present
+        if '<unk>' not in self.str_to_int:
+            self.str_to_int['<unk>'] = len(self.str_to_int)
+            self.int_to_str[len(self.int_to_str)] = '<unk>'
+
+    def encode(self, text):
+        p = re.split(r'(\s)', text)
+        # Handle unknown tokens
+        return [self.str_to_int.get(token, self.str_to_int['<unk>']) for token in p]
+
+    def decode(self, tokens):
+        return ''.join([self.int_to_str[token] for token in tokens])
+
+# ... (rest of your code) ...
+
+tokenizer = simpletokenizer(vocab)
+text1 = "build a large language model from scratch"
+text2 = "i love you"
+text = "<|endoftext|>".join((text1, text2))
+
+tokens = tokenizer.encode(text)
+print(tokens)
+
+!pip install tiktoken
+
+import tiktoken
+import importlib
+
+
+
+
+tokenizer = tiktoken.get_encoding("gpt2")
+
+text = (
+    "build a large language model from scratch"
+        "i love you"
+)
+tokens = tokenizer.encode(text)
+print(tokens)
+
